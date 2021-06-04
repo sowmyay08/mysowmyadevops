@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: i want to uninstall webserver on ubuntu
+    apt:
+     name: apache2
+     state: absent
+  - name: i want to uninstall tree
+    apt:
+     name: tree
+     state: absent
