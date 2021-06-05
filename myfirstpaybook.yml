@@ -2,12 +2,12 @@
 - hosts: all
   become: yes
   tasks:
-  - name: i want to install webserver on ubuntu
+  - name: i want to uninstall webserver on ubuntu
     apt:
      name: apache2
-     state: present
-  - name: i want to install tree
+     state: absent
+  - name: i want to uninstall tree
     apt:
      name: tree
-     state: present
+     state: absent
 
