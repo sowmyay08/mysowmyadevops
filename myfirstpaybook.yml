@@ -2,12 +2,20 @@
 - hosts: all
   become: yes
   tasks:
-  - name: i want to uninstall webserver on ubuntu
+  - name: i want to install webserver on ubuntu
     apt:
      name: apache2
-     state: absent
-  - name: i want to uninstall tree
-    apt:
-     name: tree
-     state: absent
+     state: present
+    when: ansible_os_family=="Debian"
 
+  - name: i want to start webserver on ubuntu node only
+    service:
+      name: apache2
+      state: restarted
+    when: ansible_os_family=="Debian"
+
+  - name: i want to install webserver on redhat nodes only
+    yum:
+     name: httpd
+     state: present
+    when: ansible_os_family=="RedHat"
