@@ -1,5 +1,5 @@
 ---
-- name: i want to install java on ubuntu and redhat
+- hosts: myubuntuservers
   become: yes
   tasks:
   - name: install java on ubuntu machine
