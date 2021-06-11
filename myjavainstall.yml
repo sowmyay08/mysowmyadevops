@@ -1,0 +1,15 @@
+---
+- name: i want to install java on ubuntu and redhat
+  become: yes
+  tasks:
+  - name: install java on ubuntu machine
+    apt: 
+     name: "{{myjavaonubuntu}}"
+     state: present
+    when: ansible_os_family=="Debian"
+
+  - name: install java on redhat machine 
+    apt:
+     name: "{{myjavaonredhat}}"
+     state: present
+    when: ansible_os_family=="RedHat"
