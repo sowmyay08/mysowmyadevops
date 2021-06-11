@@ -1,0 +1,4 @@
+  - name: i want to create file in my nodes
+    file:
+      path: /home/ubuntu/mytestfile
+      state: touch
