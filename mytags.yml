@@ -2,17 +2,17 @@
  - hosts: 172.31.24.85
    become: yes
    tasks:
-    - name: install git
+    - name: install git task1
       apt:
        name: git
        state: present
       tags: mygit
-    - name: install tree
+    - name: install treectask2
       apt:
          name: tree
-         state: present
+         statew: present        
       tags: mytree
-    - name: install wget
+    - name: install wget task3
       apt:
        name: wget
        state: present
